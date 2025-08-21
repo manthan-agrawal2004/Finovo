@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useRef, useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import {
   featuresData,
@@ -50,33 +50,33 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-black">
       {/* Hero Section */}
-      <HeroSection  />
+      <HeroSection />
 
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-b from-pink-50 via-white to-white dark:from-gray-950 dark:via-black dark:to-black">
-      <div className="container mx-auto px-4">
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          initial="hidden"
-          whileInView="visible"
-          transition={{ staggerChildren: 0.2 }}
-          viewport={{ once: true }}
-        >
-          {statsData.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center"
-              variants={fadeInUp}
-            >
-              <div className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-2">
-                <CountUpNumber end={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="text-gray-700 dark:text-gray-300">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            transition={{ staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {statsData.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center"
+                variants={fadeInUp}
+              >
+                <div className="text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-2">
+                  <CountUpNumber end={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-gray-700 dark:text-gray-300">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section
@@ -164,61 +164,61 @@ const LandingPage = () => {
 
       {/* Testimonials Section */}
       <section
-      id="testimonials"
-      className="py-24 bg-gradient-to-b from-white via-pink-50 to-orange-50 dark:from-black dark:via-gray-950 dark:to-gray-900"
-    >
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          What Our Users Say
-        </motion.h2>
+        id="testimonials"
+        className="py-24 bg-gradient-to-b from-white via-pink-50 to-orange-50 dark:from-black dark:via-gray-950 dark:to-gray-900"
+      >
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            What Our Users Say
+          </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonialsData.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <Card className="rounded-2xl shadow-lg">
-                <CardContent className="p-6">
-                  <p className="italic mb-4 text-gray-700 dark:text-gray-300">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    {testimonial.image ? (
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full"
-                      />
-                    ) : (
-                      <div className="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-bold">
-                        {testimonial.name.charAt(0)}
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonialsData.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <Card className="rounded-2xl shadow-lg">
+                  <CardContent className="p-6">
+                    <p className="italic mb-4 text-gray-700 dark:text-gray-300">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+                    <div className="flex items-center space-x-4">
+                      {testimonial.image ? (
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          width={50}
+                          height={50}
+                          className="rounded-full"
+                        />
+                      ) : (
+                        <div className="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-bold">
+                          {testimonial.name.charAt(0)}
+                        </div>
+                      )}
+
+                      <div>
+                        <h4 className="font-semibold">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-500">{testimonial.role}</p>
                       </div>
-                    )}
-
-                    <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-500">{testimonial.role}</p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-pink-500 via-orange-500 to-red-500">

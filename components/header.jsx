@@ -1,7 +1,7 @@
-import Logo from "@/public/logo1.svg";
+
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { checkUser } from "@/lib/checkUser";
 import HeaderActions from "./HeaderActions";
 

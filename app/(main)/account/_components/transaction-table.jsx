@@ -3,8 +3,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ChevronDown,
-  ChevronUp,
   MoreHorizontal,
   Trash,
   Search,
@@ -42,12 +40,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { categoryColors } from "@/data/categories";

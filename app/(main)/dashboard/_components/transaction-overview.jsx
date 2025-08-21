@@ -173,7 +173,7 @@ export function DashboardOverview({ accounts, transactions }) {
                       outerRadius={90}
                       dataKey="value"
                       labelLine={false} 
-                      label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }) => {
+                      label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
                         const RADIAN = Math.PI / 180;
                         const radius = innerRadius + (outerRadius - innerRadius) * 0.6; 
                         const x = cx + radius * Math.cos(-midAngle * RADIAN);
