@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "email": "email dev",
+    "dev:inngest": "inngest dev -u http://localhost:3000/api/inngest",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -50,7 +51,6 @@
     "@svgr/webpack": "^8.1.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
-    "inngest-cli": "^1.11.5",
     "postcss": "^8",
     "prettier": "^3.6.2",
     "prisma": "^6.0.1",
